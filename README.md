@@ -1,8 +1,11 @@
-Projeto em ASP.NET padrão MVC, para criação de um Web App com a finalidade de cadastrar contatos.
-![Listagem de Contatos] (https://raw.githubusercontent.com/RaulAdolfo/cadastro-contatos-ASPNET-MVC/refs/heads/main/Listagem%20Contatos.png)
+<h1>Projeto em ASP.NET padrão MVC, para criação de um Web App com a finalidade de cadastrar contatos.</h1>
 
-Linguagens, Frameworks e Ferramentas utilizadas:
-- C#, HTML, CSS, JAVASCRIPT (Bootstrap)
-- .NET 9
-- Visual Studio 2022
-- SQL 2022 / SQL SSMS
+<img src="https://github.com/RaulAdolfo/cadastro-contatos-ASPNET-MVC/blob/main/Listagem%20Contatos.png?raw=true" alt="Listagem de Contatos">
+
+<h2>Linguagens, Frameworks e Ferramentas utilizadas:</h2>
+<ul>
+<li>C#, HTML, CSS, JAVASCRIPT (Bootstrap)</li>
+<li>.NET 9 - ASP.Net (MVC)</li>
+<li>Visual Studio 2022</li>
+<li>SQL 2022 / SQL SSMS</li> 
+</ul>
