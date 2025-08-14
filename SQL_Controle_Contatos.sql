@@ -1,1 +1,1 @@
-select * from Contatos
+Select * FROM Contatos;
