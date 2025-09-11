@@ -41,5 +41,16 @@ namespace ControleDeContatos.Repositorio
             _context.SaveChanges();
             return contatoDB;
         }
+
+        public bool Excluir(int id)
+        {
+            ContatoModel contatoDB = ListarPorId(id);
+
+            if (contatoDB == null) throw new System.Exception("Houve um erro na exclusão do contato!");
+
+            _context.Contatos.Remove(contatoDB);
+            _context.SaveChanges();
+            return true;
+        }
     }
 }
