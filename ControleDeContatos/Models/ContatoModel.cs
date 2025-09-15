@@ -9,11 +9,13 @@ namespace ControleDeContatos.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required(ErrorMessage = "O nome é obrigatório")]        
-        public string Nome { get; set; }
+        public required string Nome { get; set; }
         [Required(ErrorMessage = "O E-mail é obrigatório")]
-        public string Email { get; set; }
+        [EmailAddress(ErrorMessage = "O E-mail informado é inválido")]
+        public required string Email { get; set; }
         [Required(ErrorMessage = "O Celular é obrigatório")]
-        public string Celular { get; set; }
+        [Phone(ErrorMessage = "O Celular informado é inválido")]
+        public required string Celular { get; set; }
 
     }
 }
