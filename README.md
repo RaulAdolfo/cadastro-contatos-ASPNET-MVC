@@ -4,7 +4,7 @@
 
 <h2>Linguagens, Frameworks e Ferramentas utilizadas:</h2>
 <ul>
-<li>C#, HTML, CSS, JAVASCRIPT (Bootstrap)</li>
+<li>C#, HTML, CSS  (Bootstrap), JAVASCRIPT</li>
 <li>.NET 9 - ASP.Net (MVC)</li>
 <li>Visual Studio 2022</li>
 <li>SQL 2022 / SQL SSMS</li> 
