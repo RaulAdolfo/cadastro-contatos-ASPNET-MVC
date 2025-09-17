@@ -5,22 +5,31 @@
 
 <div class="text-center">
 
-    <div class="alert alert-success" role="alert">
-        <button type="button" class="btn-danger btn-sm close-alert" arial-label="Close">X</button>
-        A simple success alert—check it out!
-    </div>
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn-danger btn-sm close-alert" arial-label="Close">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
 
-    <div class="alert alert-danger" role="alert">
-        <button type="button" class="btn-danger btn-sm close-alert" arial-label="Close">X</button>
-        A simple danger alert—check it out!
-    </div>
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn-danger btn-sm close-alert" arial-label="Close">X</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+
+    <br/>
+
 
     <h1 class="display-4 ">Listagem de Contatos</h1>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <a class="btn btn-success" role="button" asp-controller="Contato" asp-action="Criar">Adicionar novo contato</a>
     </div>
-    <br/>
+    <br />
 
     <table class="table">
         <thead>
@@ -33,7 +42,7 @@
             </tr>
         </thead>
         <tbody>
-            @if(Model != null && Model.Any())
+            @if (Model != null && Model.Any())
             {
                 foreach (ContatoModel contato in Model)
                 {

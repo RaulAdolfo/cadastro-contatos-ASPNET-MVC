@@ -1,6 +1,7 @@
 ﻿using ControleDeContatos.Models;
 using ControleDeContatos.Repositorio;
 using Microsoft.AspNetCore.Mvc;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ControleDeContatos.Controllers
 {
@@ -27,12 +28,23 @@ namespace ControleDeContatos.Controllers
         [HttpPost]
         public IActionResult Criar(ContatoModel contato)
         {
-            if(ModelState.IsValid) 
-            {   _contatoRepositorio.Adicionar(contato);
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _contatoRepositorio.Adicionar(contato);
+                    TempData["MensagemSucesso"] = "Contato cadastrado com sucesso";
+                    return RedirectToAction("Index");
+                }
+
+                return View(contato);
+            }
+            catch (System.Exception erro)
+            {
+                _contatoRepositorio.Adicionar(contato);
+                TempData["MensagemErro"] = $"Não foi possível cadastrar o contato, detalhes do erro: {erro.Message}";
                 return RedirectToAction("Index");
             }
-
-            return View(contato);
         }
 
         public IActionResult Editar(int id)
@@ -44,12 +56,23 @@ namespace ControleDeContatos.Controllers
         [HttpPost]
         public IActionResult Alterar(ContatoModel contato)
         {
-            if (ModelState.IsValid)
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _contatoRepositorio.Atualizar(contato);
+                    TempData["MensagemSucesso"] = "Contato atualizado com sucesso";
+                    return RedirectToAction("Index");
+                }
+
+                return View(contato);
+            }
+            catch (System.Exception erro)
             {
                 _contatoRepositorio.Atualizar(contato);
+                TempData["MensagemErro"] = $"Não foi possível atualizar o contato, detalhes do erro: {erro.Message}";
                 return RedirectToAction("Index");
             }
-            return View("Editar", contato);
         }
 
         public IActionResult ExcluirConfirmacao(int id)
@@ -60,8 +83,24 @@ namespace ControleDeContatos.Controllers
 
         public IActionResult Excluir(int id)
         {
-            _contatoRepositorio.Excluir(id);
-            return RedirectToAction("Index");
+            try
+            {
+                bool apagado = _contatoRepositorio.Excluir(id);
+                if (ModelState.IsValid)
+                {
+                    TempData["MensagemSucesso"] = "Contato excluído com sucesso";
+                }
+                else
+                {
+                    TempData["MensagemErro"] = "Não foi possível excluir o contato.";
+                }
+                return RedirectToAction("Index");
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Não foi possível excluir o contato, detalhes do erro: {erro.Message}";
+                return RedirectToAction("Index");
+            }
         }
     }
 }
