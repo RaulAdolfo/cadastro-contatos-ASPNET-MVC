@@ -21,7 +21,7 @@
         </div>
     }
 
-    <br/>
+    <br />
 
 
     <h1 class="display-4 ">Listagem de Contatos</h1>
@@ -31,7 +31,7 @@
     </div>
     <br />
 
-    <table class="table">
+    <table class="table" id="table-contatos">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -64,4 +64,12 @@
         </tbody>
     </table>
 </div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let table = new DataTable('#table-contatos');
+        });
+    </script>
+}
 

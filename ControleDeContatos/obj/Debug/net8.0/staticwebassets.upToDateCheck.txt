@@ -1,6 +1,9 @@
-wwwroot\js\site.js
-wwwroot\favicon.ico
 wwwroot\css\site.css
+wwwroot\DataTables\datatables.css
+wwwroot\DataTables\datatables.js
+wwwroot\DataTables\datatables.min.css
+wwwroot\DataTables\datatables.min.js
+wwwroot\favicon.ico
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
@@ -58,3 +61,4 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\js\site.js
